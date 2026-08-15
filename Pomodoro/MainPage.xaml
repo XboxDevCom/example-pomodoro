@@ -1,0 +1,97 @@
+<Page
+    x:Class="Pomodoro.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Pomodoro"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    UseSystemFocusVisuals="True"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid Padding="48,24">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0"
+                   HorizontalAlignment="Center"
+                   TextAlignment="Center"
+                   FontSize="32"
+                   FontWeight="Bold"
+                   Text="Pomodoro Timer"/>
+
+        <StackPanel Grid.Row="1"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center">
+            <TextBlock x:Name="SessionTypeText"
+                       HorizontalAlignment="Center"
+                       TextAlignment="Center"
+                       FontSize="24"
+                       Foreground="Gray"
+                       Text="Fokus-Phase"
+                       Margin="0,0,0,12"/>
+            <TextBlock x:Name="TimerDisplay"
+                       HorizontalAlignment="Center"
+                       TextAlignment="Center"
+                       FontSize="96"
+                       FontWeight="Bold"
+                       Text="25:00"
+                       Margin="0,0,0,12"/>
+            <ProgressBar x:Name="ProgressIndicator"
+                         HorizontalAlignment="Center"
+                         Width="400"
+                         Minimum="0"
+                         Maximum="100"
+                         Value="0"
+                         Margin="0,0,0,12"/>
+            <TextBlock x:Name="SessionCountText"
+                       HorizontalAlignment="Center"
+                       TextAlignment="Center"
+                       FontSize="18"
+                       Foreground="Gray"
+                       Text="Abgeschlossene Phasen: 0"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Center"
+                    Spacing="24"
+                    Margin="0,24,0,0">
+            <Button x:Name="StartButton"
+                    Content="Start"
+                    FontSize="24"
+                    MinHeight="48"
+                    MinWidth="160"
+                    Click="StartButton_Click"
+                    XYFocusRight="ResetButton"/>
+            <Button x:Name="ResetButton"
+                    Content="Zurücksetzen"
+                    FontSize="20"
+                    MinHeight="48"
+                    MinWidth="160"
+                    Click="ResetButton_Click"
+                    XYFocusLeft="StartButton"
+                    XYFocusRight="SkipButton"/>
+            <Button x:Name="SkipButton"
+                    Content="Überspringen"
+                    FontSize="20"
+                    MinHeight="48"
+                    MinWidth="160"
+                    Click="SkipButton_Click"
+                    XYFocusLeft="ResetButton"/>
+        </StackPanel>
+
+        <TextBlock x:Name="NextSessionText"
+                   Grid.Row="3"
+                   HorizontalAlignment="Center"
+                   TextAlignment="Center"
+                   FontSize="16"
+                   Foreground="Gray"
+                   Text="Nächste Phase: Kurze Pause (5 Min)"
+                   Margin="0,16,0,0"/>
+    </Grid>
+</Page>

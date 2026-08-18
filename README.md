@@ -1,28 +1,36 @@
-# Example: Pomodoro Timer
+# Pomodoro Timer
 
-This is a Pomodoro Timer example running with UWP technology on the Xbox One, demonstrating DispatcherTimer and ToastNotification.
+Pomodoro-Timer mit UWP und Xbox-Steuerung. Das Projekt ist als überschaubares Lernbeispiel für C#, UWP und die Bereitstellung auf einer Xbox One gedacht.
 
-## Getting Started
+## Tutorial
 
-Please follow our [tutorial](https://xboxdev.com/tutorials/pomodoro-timer) to create your own Pomodoro Timer application.
+Die vollständige Schrittfolge mit Hinweisen zu Visual Studio, Developer Mode und Gamepad-Eingabe steht im [XboxDev-Tutorial](https://xboxdev.com/tutorials/xbox-uwp-example-pomodoro/).
 
-## Built with
+## Voraussetzungen
 
-* [Visual Studio](https://visualstudio.microsoft.com/) - C# Editor from Microsoft
-* [Xbox One](https://afflnk.microsoft.com/c/1256010/476314/7806/) - Testing the application
-* [Microsoft.NETCore.UniversalWindowsPlatform](https://www.nuget.org/packages/Microsoft.NETCore.UniversalWindowsPlatform/) - UWP platform runtime
+- Windows mit Visual Studio und installierter **Universal Windows Platform development**-Workload
+- Eine Xbox One im Developer Mode oder der UWP-Simulator
+- Visual Studio-Konfiguration **Debug**, Plattform **x64**
 
-## Features
+## Projekt öffnen und starten
 
-* Pomodoro technique (25 min focus, 5 min break, 15 min long break)
-* Toast notifications when a phase completes
-* Session tracking with completed focus session counter
-* Gamepad controls with XYFocus navigation
+1. Repository klonen oder als ZIP laden: [example-pomodoro](https://github.com/XboxDevCom/example-pomodoro).
+2. **Pomodoro.sln** in Visual Studio öffnen.
+3. **x64** als Plattform auswählen. Für lokale Tests genügt der Simulator; für die Konsole **Remote Machine** wählen, die Xbox-IP eintragen und den Pairing-PIN aus dem Developer Portal bestätigen.
+4. Mit **Erstellen** kompilieren und mit **Bereitstellen** auf Simulator oder Konsole starten.
 
-## Contributors
+## Projektaufbau
 
-See the [list of contributors](https://github.com/XboxDevCom/example-pomodoro/contributors) who participated in this project.
+Der zentrale Quellcode liegt im Ordner **Pomodoro/**. Öffne zuerst die Startseite und verfolge anschließend die zugehörige C#-Datei. So lässt sich nachvollziehen, wie Oberfläche, Eingabe und Zustand zusammenspielen.
 
-## License
+### Gute erste Änderungen
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+Zeigt Zeitsteuerung, Zustandswechsel und Benachrichtigungen. Ändere danach Farben, Texte oder ein Asset und prüfe die Bereitstellung erneut. Bei Xbox-Oberflächen sind Fokusführung und ein lesbares Layout aus größerer Entfernung wichtig.
+
+## Hinweise
+
+Die Beispiele stammen aus der UWP- und Xbox-One-Entwicklungsphase. Für neue Projekte sollte geprüft werden, ob Windows App SDK oder Xbox GDK besser passt.
+
+## Lizenz
+
+Die Lizenzbedingungen stehen in der Datei [LICENSE](LICENSE).
